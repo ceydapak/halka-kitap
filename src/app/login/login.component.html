@@ -1,0 +1,15 @@
+<form #loginForm = "ngForm" (ngSubmit)="control(loginForm.value)">
+<div  style="margin: 5%;">
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com" [(ngModel)]="user.mail" name="mail">
+  <label for="floatingInputValue">Email</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="user.password" name="password">
+  <label for="floatingPassword">Password</label>
+</div>
+<div>
+  <button id="loginbutton" class="btn btn-dark float-end m-2">Submit</button>
+  </div>
+</div>
+</form>
