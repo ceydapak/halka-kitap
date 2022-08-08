@@ -1,6 +1,5 @@
-export class User
+export class Register
 {
-  userId : number;
   userName : string;
   userLastname: string;
   birthdate:Date;
@@ -11,12 +10,6 @@ export class User
   phone: string;
   mail:string;
   password:string;
-  score:number;
-  testScore:number;
-  commentScore: number;
-  bookPoint:number;
+  confirmpassword:string;
   libraryName:string;
-  couponCode:string;
-  userImgUrl:string;
-
 }

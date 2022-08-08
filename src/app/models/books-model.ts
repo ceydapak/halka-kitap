@@ -9,5 +9,6 @@ export class Book
   bookAbout:string;
   bookPoint:number;
   bookCategoryName:string;
+  bookImgUrl:string;
 
 }

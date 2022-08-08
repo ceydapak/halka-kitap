@@ -42,8 +42,8 @@ getUsers():Observable<User[]>{
   return this.http.get<User[]>(this.path + '/Users');
 }
 
-getUser(id:number|string){
-  return this.http.get<User[]>(this.path + `/Users ${id}`);
+getUser(id:number):Observable<User>{
+  return this.http.get<User>(this.path + `/Users ${id}`);
 }
 
 updateUser(id:number|string,data:any){
@@ -109,5 +109,18 @@ addCategory( data:any){
 
 deleteCategory(id:number|string){
   return this.http.delete<BookCategory[]>(this.path + `/BookCategories ${id}`);
+}
+
+
+//Register
+
+registerUser(data:any){
+  return this.http.post<User>('https://localhost:7109/api/User/register',data);
+}
+
+//Login
+
+loginUser(data:any){
+  return this.http.post<User>('https://localhost:7109/api/User/login',data);
 }
 }

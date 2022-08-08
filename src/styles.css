@@ -1,0 +1,205 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.pic-ctn {
+  width: 100vw;
+  height: 200px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position: relative;
+  width: 70vw;
+  height: 300px;
+  margin-top: 15vh;
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+}
+
+.div-color{
+
+  background-color:rgba(247, 247, 211, 0.938);
+  height:auto;
+  color:black;
+  text-decoration: none;
+}
+.div-loc{
+margin-top: 10px;
+margin-left: 500px;
+}
+.saga-kaydir{
+  float:right;
+  padding:0 0 10px 10px;
+  }
+
+.sola-kaydir{
+    float:left;
+    padding:90px 10px 10px 0;
+    width:25%;
+    margin-left:20%;
+
+    }
+.div-black{
+
+      background-color: black;
+      color: rgba(247, 247, 211, 0.938);
+
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 25px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 615px;
+      border-radius: 100%;
+    }
+
+
+    .fa-linkedin {
+      background: #007bb5;
+      color: white;
+      padding: 20px;
+      font-size: 15px;
+      width: 15px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa-youtube {
+      background: #bb0000;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      width: 15px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa-instagram {
+      background: #125688;
+      color: white;
+      padding: 20px;
+      font-size: 15px;
+      width: 15px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa-pinterest {
+      background: #cb2027;
+      color: white;
+      padding: 20px;
+      font-size: 15px;
+      width: 15px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;}
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial;
+      }
+
+      .header {
+        text-align: center;
+        padding: 32px;
+      }
+
+      .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+
+      /* Create four equal columns that sits next to each other */
+      .column {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 800px) {
+        .column {
+          -ms-flex: 50%;
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

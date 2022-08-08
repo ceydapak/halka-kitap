@@ -4,6 +4,7 @@ export class Library
   libraryName:string;
   libraryLocation:string;
   libraryStaff:string;
-  libraryPhone:number;
+  libraryPhone:string;
   libraryMail:string;
+  libraryImgUrl: string;
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user-model';
+import { Login } from '../models/login-model';
+import { AlertifyService } from '../services/alertify.service';
 import { HalkaApiService } from '../services/halka-api.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,18 +10,20 @@ import { HalkaApiService } from '../services/halka-api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  login = new Login();
 
-  constructor( private service : HalkaApiService) { }
-  user = new User();
-
+  constructor(private service : HalkaApiService, private alertify: AlertifyService) { }
   ngOnInit(): void {
 
   }
 
-  control(data:any){
-
-   
-
+  loginNew(data:any){
+    this.service.loginUser(this.login).subscribe(()=>{
+      console.warn(data);
+      this.alertify.success("Successfully entered!");
+      window.setTimeout(function(){location.reload()},2000);
+    })
   }
+
 
 }

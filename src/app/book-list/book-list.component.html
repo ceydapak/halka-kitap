@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <div class="col">
+      <div class="p-3 border bg-light" *ngFor=" let b of books">
+        <div class="card" style="width: 18rem;">
+          <img src="{{b.bookImgUrl}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{b.bookName}}</h5>
+            <p class="card-text">{{b.bookAbout}}</p>
+            <a href="#" class="btn btn-primary">More Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>

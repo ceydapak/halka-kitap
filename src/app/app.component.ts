@@ -10,5 +10,7 @@ import { CountryISO, PhoneNumberFormat, SearchCountryField } from 'ngx-intl-tel-
 })
 export class AppComponent {
   title = 'halka-kitap';
-  
+refresh(): void {
+window.location.reload();
+}
 }

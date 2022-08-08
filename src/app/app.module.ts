@@ -12,14 +12,11 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HomeBooksComponent } from './home-books/home-books.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CouponDetailComponent } from './coupon-detail/coupon-detail.component';
 import { BookTestComponent } from './book-test/book-test.component';
 import { BookCommentComponent } from './book-comment/book-comment.component';
-import { HomeAboutComponent } from './home-about/home-about.component';
-import { HomeContactComponent } from './home-contact/home-contact.component';
 import { RegisterComponent } from './register/register.component';
 
 
@@ -27,17 +24,12 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeBooksComponent,
     BookDetailsComponent,
     UserDetailComponent,
     CouponDetailComponent,
     BookTestComponent,
     BookCommentComponent,
-    HomeAboutComponent,
-    HomeContactComponent,
     RegisterComponent
-
-
 
   ],
   imports: [
