@@ -16,6 +16,7 @@ constructor(private http: HttpClient) { }
 path="https://localhost:7109/api";
 
 
+
 //Book
 getBooks():Observable<Book[]>{
    return this.http.get<Book[]>(this.path + "/Books");
@@ -23,12 +24,12 @@ getBooks():Observable<Book[]>{
 getBook(id:number|string){
   return this.http.get<Book[]>(this.path + `/Books ${id}`);
 }
-updateBook(id:number|string,data:any){
-  return this.http.put<Book[]>(this.path + `/Books ${id}`,data);
+updateBook(id:number|string,ubdata:any){
+  return this.http.put<Book[]>(this.path + `/Books ${id}`,ubdata);
 }
 
-addBook( data:any){
-  return this.http.post<Book[]>(this.path + '/Books',data);
+addBook( bdata:any){
+  return this.http.post<Book[]>(this.path + '/Books',bdata);
 }
 
 deleteBook(id:number|string){
@@ -46,12 +47,12 @@ getUser(id:number):Observable<User>{
   return this.http.get<User>(this.path + `/Users ${id}`);
 }
 
-updateUser(id:number|string,data:any){
-  return this.http.put<User[]>(this.path + `/Users ${id}`,data);
+updateUser(id:number|string,uudata:any){
+  return this.http.put<User[]>(this.path + `/Users ${id}`,uudata);
 }
 
-addUser( data:any){
-  return this.http.post<User[]>(this.path + '/Users', data);
+addUser( audata:any){
+  return this.http.post<User[]>(this.path + '/Users', audata);
 }
 
 deleteUser(id:number|string){
@@ -63,12 +64,12 @@ getLibraries():Observable<Library[]>{
   return this.http.get<Library[]>(this.path + '/Libraries');
 }
 
-updateLibraries(id:number|string,data:any){
-  return this.http.put<Library[]>(this.path + `/Libraries${id}`,data);
+updateLibraries(id:number|string,uldata:any){
+  return this.http.put<Library[]>(this.path + `/Libraries${id}`,uldata);
 }
 
-addLibraries( data:any){
-  return this.http.post<Library[]>(this.path + '/Libraries',data);
+addLibraries( ldata:any){
+  return this.http.post<Library[]>(this.path + '/Libraries',ldata);
 }
 
 deleteLibraies(id:number|string){
@@ -81,12 +82,12 @@ getCoupons():Observable<Coupon[]>{
   return this.http.get<Coupon[]>(this.path + '/Coupons');
 }
 
-updateCoupons(id:number|string,data:any){
-  return this.http.put<Coupon[]>(this.path + `/Coupons ${id}`,data);
+updateCoupons(id:number|string,udata:any){
+  return this.http.put<Coupon[]>(this.path + `/Coupons ${id}`,udata);
 }
 
-addCoupons( data:any){
-  return this.http.post<Coupon[]>(this.path + '/Coupons',data);
+addCoupons( cdata:any){
+  return this.http.post<Coupon[]>(this.path + '/Coupons',cdata);
 }
 
 deleteCoupons(id:number|string){
@@ -103,8 +104,8 @@ updateCategory(id:number|string,data:any){
   return this.http.put<BookCategory[]>(this.path + `/BookCategories ${id}`,data);
 }
 
-addCategory( data:any){
-  return this.http.post<BookCategory[]>(this.path + '/BookCategories',data);
+addCategory( adddata:any){
+  return this.http.post<BookCategory[]>(this.path + '/BookCategories',adddata);
 }
 
 deleteCategory(id:number|string){
@@ -114,13 +115,14 @@ deleteCategory(id:number|string){
 
 //Register
 
-registerUser(data:any){
-  return this.http.post<User>('https://localhost:7109/api/User/register',data);
+registerUser(registerdata:any){
+  return this.http.post<User>('https://localhost:7109/api/User/register',registerdata);
 }
 
 //Login
 
-loginUser(data:any){
-  return this.http.post<User>('https://localhost:7109/api/User/login',data);
+loginUser(anydata:any){
+  return this.http.post<User>('https://localhost:7109/api/User/login',anydata);
 }
+
 }

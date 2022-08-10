@@ -9,6 +9,17 @@ export class HomepageComponent implements OnInit {
 
   constructor() { }
 
+  // isUserAuthenticated(){
+  //   const token  = localStorage.getItem('jwt');
+  //   if(token){
+  //     return true;
+  //   } else{
+  //     return false;
+  //   }
+  // }
+  logout(){
+      localStorage.removeItem('jwt');
+  }
   ngOnInit(): void {
   }
 

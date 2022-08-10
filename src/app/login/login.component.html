@@ -1,13 +1,18 @@
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link" href="home"style="color: #000; text-decoration: none; font-size:large;">Home</a>
+  </li>
+</ul>
 <form #loginForm = "ngForm" (ngSubmit)="loginNew(loginForm.value)">
 
 <div  style="margin: 5%;">
   <h1 style="font-weight: bold; font-size: 100%; color: #000; text-decoration: none;">Login Form</h1>
 <div class="form-floating mb-3">
-  <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com" [(ngModel)]="login.mail"  name="email" required >
+  <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com" [(ngModel)]="user.mail"  name="email" required >
   <label for="floatingInputValue">Email</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="login.password" name="pass" required [maxLength]="10" [minLength]="10"  >
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="user.password" name="pass" required [maxLength]="10" [minLength]="10"  >
   <label for="floatingPassword">Password</label>
 </div>
 <div>

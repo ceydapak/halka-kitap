@@ -1,59 +1,64 @@
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link" href="home"style="color: #000; text-decoration: none; font-size:large; ">Home</a>
+  </li>
+</ul>
 <form #registerForm="ngForm" (ngSubmit)="addNewUser(registerForm.value)">
 <div  style="margin: 5%;">
   <h1 style="font-weight: bold; font-size: 100%; color: #000; text-decoration: none;">Register Form</h1>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" [(ngModel)]="register.userName" name="name" required>
+  <input type="text" class="form-control" id="floatingInput" [(ngModel)]="user.userName" name="name" required>
   <label for="floatingInput">Name</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput"[(ngModel)]="register.userLastname" name="Lastname" required>
+  <input type="text" class="form-control" id="floatingInput"[(ngModel)]="user.userLastname" name="Lastname" required>
   <label for="floatingInput">Last Name</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="date" class="form-control" id="floatingInput" [(ngModel)]="register.birthdate" name="birthdate" required>
+  <input type="date" class="form-control" id="floatingInput" [(ngModel)]="user.birthdate" name="birthdate" required>
   <label for="floatingInput">Birthdate</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com" [(ngModel)]="register.mail" name="mail" required>
+  <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com" [(ngModel)]="user.mail" name="mail" required>
   <label for="floatingInputValue">Email</label>
 </div>
 <div class="form-floating mb-3">
-  <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="register.isStudent" name="isStudent" required>
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="user.isStudent" name="isStudent" required>
     <option value="true">Yes</option>
     <option value="false">No</option>
   </select>
   <label for="floatingSelect">Select a option which suits to you</label>
 </div>
-<div class="form-floating mb-3">
-  <textarea class="form-control" placeholder="School Name" id="floatingTextarea" [(ngModel)]="register.school" name="school"></textarea>
+<div class="form-floating mb-3"  *ngIf="user.isStudent === true">
+  <textarea class="form-control" placeholder="School Name" id="floatingTextarea" [(ngModel)]="user.school" name="school"></textarea>
   <label for="floatingTextarea">School</label>
 </div>
-<div class="form-floating mb-3">
-  <input type="number" class="form-control" placeholder="Class" id="floatingTextarea" [(ngModel)]="register.class" name="class">
+<div class="form-floating mb-3" >
+  <input type="number" class="form-control" placeholder="Class" id="floatingTextarea" [(ngModel)]="user.class" name="class">
   <label for="floatingTextarea">Class</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" placeholder="Class" id="floatingTextarea" [(ngModel)]="register.institution" name="institution">
+  <input type="text" class="form-control" placeholder="Class" id="floatingTextarea" [(ngModel)]="user.institution" name="institution">
   <label for="floatingTextarea">Institution</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="tel" class="form-control" placeholder="Class" id="floatingTextarea" [(ngModel)]="register.phone" name="phone" requierd>
+  <input type="tel" class="form-control" placeholder="Class" id="floatingTextarea" [(ngModel)]="user.phone" name="phone" requierd>
   <label for="floatingTextarea">Phone</label>
 </div>
 
 <div class="form-floating mb-3">
-  <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="register.libraryName" name="library" required>
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="user.libraryName" name="library" required>
     <option *ngFor="let l of libraries">{{l.libraryName}}</option>
   </select>
   <label for="floatingSelect">Select the library you registered </label>
 </div>
 <div class="form-floating mb-3">
-  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="register.password" name="password"required [maxLength]="10" [minLength]="6">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="user.password" name="password"required [maxLength]="10" [minLength]="6">
   <label for="floatingPassword">Password</label>
 </div>
 <div>
   <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="register.confirmpassword" name="confirmpassword"required [maxLength]="10" [minLength]="6">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="user.confirmpassword" name="confirmpassword"required [maxLength]="10" [minLength]="6">
     <label for="floatingPassword">Confirm Password</label>
   </div>
 </div>
@@ -64,4 +69,6 @@
 </div>
 <!-- <div (ngSubmit)="reloadPage()"></div> -->
 <router-outlet></router-outlet>
+
+<br>
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Login } from '../models/login-model';
+import { Router } from '@angular/router';
+import { User } from '../models/user-model';
 import { AlertifyService } from '../services/alertify.service';
 import { HalkaApiService } from '../services/halka-api.service';
 
@@ -10,20 +11,34 @@ import { HalkaApiService } from '../services/halka-api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  login = new Login();
+  user = new User();
 
-  constructor(private service : HalkaApiService, private alertify: AlertifyService) { }
+
+  constructor(private service : HalkaApiService, private alertify: AlertifyService, private router: Router) { }
   ngOnInit(): void {
 
   }
 
-  loginNew(data:any){
-    this.service.loginUser(this.login).subscribe(()=>{
-      console.warn(data);
-      this.alertify.success("Successfully entered!");
-      window.setTimeout(function(){location.reload()},2000);
-    })
-  }
+  loginNew(login:any){
+   this.service.loginUser(this.user).subscribe( success => {
+    console.warn(login);
+    this.alertify.success("Successfully entered!");
+    window.setTimeout(function(){location.reload()},2000);
+    // const token = (<any>success).token;
+    // localStorage.setItem('jwt',token);
+    this.router.navigate(["/dashboard"]);
+  },
+    failure => {
+     this.alertify.error("Email address or password is wrong!");
+   });
+}
+
 
 
 }
+
+
+function jwtToken(arg0: string, jwtToken: any) {
+  throw new Error('Function not implemented.');
+}
+

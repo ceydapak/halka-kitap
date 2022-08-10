@@ -1,0 +1,21 @@
+
+<div id="navbar">
+  <a (click)="openNav()">Menu</a>
+  <a href="notification">Notifications</a>
+  <a href="new">The Newest</a>
+  <a style="float: right;" id="logout" (click)="logout()">Log out</a>
+</div>
+<div id="mySideNav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a href="profile">Profile</a>
+  <a href="book">My Books</a>
+  <a href="book-test">My Tests</a>
+  <a href="coupon-detail">Coupons</a>
+</div>
+<br>
+<br>
+    <div id="main">
+      <app-list></app-list>
+    </div>
+
+<router-outlet></router-outlet>

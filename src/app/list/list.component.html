@@ -1,0 +1,18 @@
+
+  <div class="container">
+    <div class="card-deck row">
+      <div class="card col-md-4" *ngFor="let b of books">
+        <img class="card-img-top" src="{{b.bookImgUrl}}" alt="Card image cap">
+        <div class="card-body">
+          <h1 class="card-title">{{b.bookName}}</h1>
+          <h5 class="card-text">{{b.bookAbout}}</h5>
+        </div>
+        <div class="card-footer">
+          <a href="book-detail" class="card-link" style="text-decoration:none ; color: black;">Card link</a>
+          <a href="book-test" class="card-link" style="text-decoration:none ;  color: black;">Another link</a>
+        </div>
+    </div>
+  </div>
+
+
+

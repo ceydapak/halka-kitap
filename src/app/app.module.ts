@@ -18,10 +18,12 @@ import { CouponDetailComponent } from './coupon-detail/coupon-detail.component';
 import { BookTestComponent } from './book-test/book-test.component';
 import { BookCommentComponent } from './book-comment/book-comment.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     LoginComponent,
     BookDetailsComponent,
@@ -29,9 +31,10 @@ import { RegisterComponent } from './register/register.component';
     CouponDetailComponent,
     BookTestComponent,
     BookCommentComponent,
-    RegisterComponent
-
-  ],
+    RegisterComponent,
+      DashboardComponent,
+      ListComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

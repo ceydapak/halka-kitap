@@ -11,6 +11,7 @@ export class User
   phone: string;
   mail:string;
   password:string;
+  confirmpassword:string;
   score:number;
   testScore:number;
   commentScore: number;
