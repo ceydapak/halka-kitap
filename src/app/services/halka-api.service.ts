@@ -6,14 +6,19 @@ import {User} from '../models/user-model';
 import { Library } from '../models/libraries-model';
 import { Coupon } from '../models/coupons-model';
 import { BookCategory } from '../models/bookcategory-model';
+import { Router } from '@angular/router';
+//import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HalkaApiService {
 
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient, private router :Router) { }
 path="https://localhost:7109/api";
+// jwtHelper:JwtHelper = new JwtHelper();
+// TOKEN_STRING:"tok";
 
 
 
@@ -119,10 +124,25 @@ registerUser(registerdata:any){
   return this.http.post<User>('https://localhost:7109/api/User/register',registerdata);
 }
 
+
 //Login
 
-loginUser(anydata:any){
-  return this.http.post<User>('https://localhost:7109/api/User/login',anydata);
+loginUser(user:User): Observable<string>{
+  return this.http.post('https://localhost:7109/api/User/login',user,{responseType:'text'});
+
 }
 
+logout(){
+  localStorage.removeItem('tok');
+  this.router.navigate(["/login"]);
+}
+// loggedin(){
+//   return tokenNotExpired(this.TOKEN_STRING);
+// }
+// get token(){
+//   return localStorage.getItem(this.TOKEN_STRING)
+// }
+// getUserId(){
+//   return this.jwtHelper.decodeToken('tok').nameid
+// }
 }

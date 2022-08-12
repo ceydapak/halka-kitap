@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HalkaApiService } from '../services/halka-api.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
-  constructor(private router: Router, private service : HalkaApiService ) { }
+  constructor(private router: Router ) { }
 
   ngOnInit() {
   var prevScrollpos = window.pageYOffset;
@@ -37,12 +36,9 @@ export class DashboardComponent implements OnInit {
   logout(){
     const logout = document.getElementById("logout")!;
     logout.addEventListener('click', () => {
-      this.service.logout();
+      this.router.navigate(["login"]);
     });
 
   }
-  // get isLoggedin(){
-  //   return this.service.loggedin();
-  //  }
 
 }

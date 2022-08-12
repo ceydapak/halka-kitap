@@ -8,32 +8,31 @@ import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CouponDetailComponent } from './coupon-detail/coupon-detail.component';
 import { BookTestComponent } from './book-test/book-test.component';
 import { BookCommentComponent } from './book-comment/book-comment.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListComponent } from './list/list.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
     LoginComponent,
     BookDetailsComponent,
-    UserDetailComponent,
     CouponDetailComponent,
     BookTestComponent,
     BookCommentComponent,
     RegisterComponent,
       DashboardComponent,
-      ListComponent
+      ListComponent,
+      ProfileComponent
    ],
   imports: [
     BrowserModule,

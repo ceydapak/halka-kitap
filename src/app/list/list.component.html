@@ -1,6 +1,8 @@
-
+<br>
+<br>
   <div class="container">
     <div class="card-deck row">
+      <div *ngIf="books.length>0"></div>
       <div class="card col-md-4" *ngFor="let b of books">
         <img class="card-img-top" src="{{b.bookImgUrl}}" alt="Card image cap">
         <div class="card-body">
@@ -8,7 +10,7 @@
           <h5 class="card-text">{{b.bookAbout}}</h5>
         </div>
         <div class="card-footer">
-          <a href="book-detail" class="card-link" style="text-decoration:none ; color: black;">Details</a>
+          <a routerLink="book-detail/{{b.bookId}}" class="card-link" style="text-decoration:none ; color: black;" >Details</a>
           <a href="book-test" class="card-link" style="text-decoration:none ;  color: black;">Test yourself</a>
         </div>
     </div>

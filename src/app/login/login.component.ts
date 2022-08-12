@@ -14,31 +14,24 @@ export class LoginComponent implements OnInit {
   user = new User();
 
 
+
   constructor(private service : HalkaApiService, private alertify: AlertifyService, private router: Router) { }
   ngOnInit(): void {
 
   }
 
-  loginNew(login:any){
-   this.service.loginUser(this.user).subscribe( success => {
-    console.warn(login);
-    this.alertify.success("Successfully entered!");
-    window.setTimeout(function(){location.reload()},2000);
-    // const token = (<any>success).token;
-    // localStorage.setItem('jwt',token);
-    this.router.navigate(["/dashboard"]);
-  },
-    failure => {
-     this.alertify.error("Email address or password is wrong!");
-   });
-}
-
+  loginNew(user: User){
+    this.service.loginUser(user).subscribe((token:string)=>{
+      localStorage.setItem('tok',token);
+      this.alertify.success("Successfully entered!");
+      this.router.navigate(["/dashboard"]);
+    },
+      failure => {
+       this.alertify.error("Email address or password is wrong!");
+       window.setTimeout(function(){location.reload()},2000);
+     });
 
 
 }
 
-
-function jwtToken(arg0: string, jwtToken: any) {
-  throw new Error('Function not implemented.');
 }
-
