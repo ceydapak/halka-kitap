@@ -13,7 +13,7 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path:"login", component:LoginComponent},
   {path:"home", component:HomepageComponent},
   {path:"list", component:ListComponent},
