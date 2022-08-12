@@ -27,12 +27,11 @@ export class DashboardComponent implements OnInit {
   openNav() {
     const sidenav= document.getElementById('mySideNav')!.style.width = "250px";
     const main= document.getElementById("main")!.style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  
   }
   closeNav() {
     const sidenav=document.getElementById("mySideNav")!.style.width = "0";
     const main=document.getElementById("main")!.style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
   }
   logout(){
     const logout = document.getElementById("logout")!;
